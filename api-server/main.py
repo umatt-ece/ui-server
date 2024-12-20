@@ -19,6 +19,13 @@ def get_data():
         data[key] = ps.get(key)
     return data
 
+@app.get("/frontend")
+def frontend_static_files():
+    pass
+    # files = StaticFiles("index.html")
+    # return files
+
+
 
 @app.get("/test_bool/{value}")
 def read_item(key: str, value: bool):
