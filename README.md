@@ -1,5 +1,18 @@
 # Server
 
+## Setup
+
+1. Create python VENV (optional)
+2. Install requirements
+
+```shell
+pip install -r api_server/requirements.txt
+pip install -r common/requirements.txt
+pip install -r mcu_driver/requirements.txt
+```
+
+3. Install Redis
+
 ## Things to do
 
 1. Add the Redis code
