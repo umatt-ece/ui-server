@@ -3,8 +3,7 @@ from typing import Union
 from fastapi import FastAPI, APIRouter
 from fastapi_utils.cbv import cbv
 
-from common import  ParameterStore
-from common import VARIABLES
+from common import ParameterStore, VARIABLES
 
 router = APIRouter()
 

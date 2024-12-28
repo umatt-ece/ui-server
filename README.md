@@ -26,3 +26,10 @@ pip install -r mcu_driver/requirements.txt
    6. how to server static files)
 4. Later we'll do the MCU
 5. Wait for list of parameter from frontend/embedded teams
+
+- I'll talk to Zach about getting you more specifics (try to get back to your later today or tomorrow)
+- In the meantime
+  - Cleaning up the code (consistency, comments, naming, etc...)
+  - Think of some solutions for how to store our parameters (experiment with enums, dicts, etc...)
+  - Look into Serial Peripheral Interface (SPI) and maybe research a few libraries in Python that work with spi
+  - Look into how to create a docker container (Dockerfiles & docker-compose)
