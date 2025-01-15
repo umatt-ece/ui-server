@@ -4,26 +4,52 @@
     <main>
         <h1>Chat</h1>
         <form action="" onsubmit="sendMessage(event)">
-          <input type="text" id="messageText" autocomplete="off"/>
+          <textarea id="messageText" rows="4" cols="50" autocomplete="off" placeholder="Type your message here..."></textarea>
           <button>Send</button>
-      </form>
-      <ul id='messages'>
+        </form>
+        <ul id='messages'></ul>
     </main>
     <script>
-      var ws = new WebSocket("ws://localhost:8000/ws");
-            ws.onmessage = function(event) {
-                var messages = document.getElementById('messages')
-                var message = document.createElement('li')
-                var content = document.createTextNode(event.data)
-                message.appendChild(content)
-                messages.appendChild(message)
-            };
-            function sendMessage(event) {
-                var input = document.getElementById("messageText")
-                ws.send(input.value)
-                input.value = ''
-                event.preventDefault()
-            }
+      var ws = new WebSocket("ws://127.0.0.1:8000/ws");
+
+      // Open WebSocket connection
+      ws.onopen = function() {
+          console.log("WebSocket connection established.");
+      }
+
+      // Handle incoming messages
+      ws.onmessage = function(event) {
+          var messages = document.getElementById('messages');
+          var message = document.createElement('li');
+          var content = document.createTextNode(event.data);
+          message.appendChild(content);
+          messages.appendChild(message);
+      };
+
+      // Send message on form submit
+      function sendMessage(event) {
+          var input = document.getElementById("messageText");
+          // var command = "set";  // Define the command to send
+          //var key = "user_message";  // Key to store the message
+          //var value = input.value;  // The actual message input from the user
+
+          // Construct the message as JSON
+          //var messageData = {
+          //    command: command,
+          //    key: key,
+          //    value: value
+          //};
+
+          // Send the message over the WebSocket connection
+          var messageData = JSON.parse(input.value);
+          ws.send(JSON.stringify(messageData));
+
+          // Clear input field
+          input.value = '';
+
+          // Prevent form submission and page reload
+          event.preventDefault();
+      }
     </script>
   </body>
 </html>

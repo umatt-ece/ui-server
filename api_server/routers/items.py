@@ -8,6 +8,8 @@ from common import VARIABLES
 
 router = APIRouter()
 
+# An example of class bass view with fastAPI
+
 @cbv(router)
 class ItemView:
     def __init__(self):
