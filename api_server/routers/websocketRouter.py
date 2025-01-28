@@ -20,11 +20,11 @@ async def websocket_endpoint(websocket: WebSocket):
             
             response = {}
             try:
-                if command == "set" and key and value is not None:
+                if command == "set" and key and value is not None:        # If the user want to set value
                     parameter_store.set(key, value)
                     response = {"status": "success", "message": f"Key '{key}' set successfully."}
 
-                elif command == "get" and key:
+                elif command == "get" and key:                              # If the user want to get value
                     value = parameter_store.get(key)
                     response = {"status": "success", "key": key, "value": value}
 
