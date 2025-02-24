@@ -26,3 +26,10 @@ pip install -r mcu_driver/requirements.txt
    6. how to server static files)
 4. Later we'll do the MCU
 5. Wait for list of parameter from frontend/embedded teams
+
+
+## How to test spi and CAN bus (just for now)
+
+   python test_micro_controller.py
+
+**Notes:** The messages for CAN are hardcode since I still do not know how to convert the messages to parameter variables in redis. Also for spi, it has not been tested virtually yet.  
