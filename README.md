@@ -32,4 +32,4 @@ pip install -r mcu_driver/requirements.txt
 
    python test_micro_controller.py
 
-**Notes:** The messages for CAN are hardcode since I still do not know how to convert the messages to parameter variables in redis. Also for spi, it has not been tested virtually yet.  
+**Notes:** The messages for CAN are hardcode since I still do not know how to convert the messages to parameter variables in redis. Also for spi, it has not been tested virtually yet.  Additionally, docker compose still has not worked. 

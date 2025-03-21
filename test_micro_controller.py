@@ -18,3 +18,4 @@ mc1.close()
 mc2.close()
 
 print("Program end normally!")
+print(msg_expected.arbitration_id)

@@ -4,7 +4,7 @@ from typing import Any, List, Dict
 
 class ParameterStore:
     def __init__(self):
-        self.key_value_store = redis.Redis(host='localhost', port=6379, db=0)
+        self.key_value_store = redis.Redis(host='redis-container', port=6379, db=0)
 
     def set(self, key: str, value: Any) -> None:
         """Store a key-value pair in Redis."""

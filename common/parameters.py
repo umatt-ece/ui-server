@@ -1,7 +1,7 @@
 from enum import Enum
 from collections import namedtuple
 
-VARIABLES = {
+VARIABLES_TEST = {
     "TEST_BOOL": {
         "type": bool,
         "default": False,
@@ -16,6 +16,62 @@ VARIABLES = {
         "default": "",
     }
 }
+
+VARIABLES = {
+    "SEAT_PRESENCE": {
+        "type": bool,
+        "default": False,
+        "description": "The value of the seat sensor",
+    },
+    "L_JOYSTICK": {
+        "type": int,
+        "default": 0,
+        "description": "The value of the left joystick",
+    },
+    "R_JOYSTICK": {
+        "type": int,
+        "default": 0,
+        "description": "The value of the right joystick",
+    },
+    "L_JOYSTICK_PREVIOUS": {
+        "type": int,
+        "default": 0,
+        "description": "The previous value of the left joystick",
+    },
+    "R_JOYSTICK_PREVIOUS": {
+        "type": int,
+        "default": 0,
+        "description": "The previous value of the right joystick",
+    },
+    "L_DEADMAN_SENSOR": {
+        "type": bool,
+        "default": False,
+        "description": "The value of the left deadman's switch",
+    },
+    "R_DEADMAN_SENSOR": {
+        "type": bool,
+        "default": False,
+        "description": "The value of the right deadman's switch",
+    },
+    "GEAR": {
+        "type": int,
+        "default": 1,
+        "description": "The current gear of the tractor (Fast = 0, Neutral = 1, Slow = 2)",
+    },
+    "L_MOTOR_DELAY": {
+        "type": int,
+        "default": 0,
+        "unit": "ms",
+        "description": "The delay for the left motor to reach the desired speed",
+    },
+    "R_MOTOR_DELAY": {
+        "type": int,
+        "default": 0,
+        "unit": "ms",
+        "description": "The delay for the right motor to reach the desired speed",
+    },
+}
+
 
 fields = ["type", "default", "unit", "description"]
 

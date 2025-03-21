@@ -1,8 +1,11 @@
 import can
 
 class Microcontroller():
-    def __init__(self):
+    def __init__(self,  interface='can0', bitrate=250000, bustype='socketcan'):
         self.bus = can.interface.Bus('text', interface='virtual',bitrate=500000)
+        self.parameter_pgn_map = {
+            # Engine parameters
+        }
 
     def get(self, parameter):
         try:
@@ -20,5 +23,6 @@ class Microcontroller():
         
     def close(self):
         self.bus.shutdown()
+        
             
             
