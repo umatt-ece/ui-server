@@ -25,4 +25,4 @@ def index(request: Request):
 app.include_router(ws_router)  # this will try the websocket connection
 
 if __name__ == "__main__":
-    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+    uvicorn.run("api_server.main:app", host="0.0.0.0", port=8000, reload=True)
