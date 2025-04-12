@@ -1,6 +1,36 @@
+# ===========================================================
+# parameters.py - Definition of system parameters and metadata
+#
+# This file defines two dictionaries, `VARIABLES` and `VARIABLES_TEST`,
+# which represent configuration and telemetry parameters used in the
+# system. Each parameter includes metadata such as its type, default
+# value, and optionally a description and unit.
+#
+# These parameter definitions are typically referenced throughout the
+# system (e.g., API server, microcontroller sync, and UI) to validate,
+# initialize, and document control values stored in Redis.
+# ===========================================================
+
 from enum import Enum
 from collections import namedtuple
 
+# ===========================================================
+# Dictionary: VARIABLES_TEST
+#
+# Purpose:
+#   A small test set of parameters used for development or
+#   diagnostic purposes. Useful when running in a test mode
+#   or unit testing without full hardware.
+#
+# Structure:
+#   {
+#     "PARAM_NAME": {
+#         "type": <Python type>,
+#         "default": <default value>,
+#         "description": <optional string>
+#     }
+#   }
+# ===========================================================
 VARIABLES_TEST = {
     "TEST_BOOL": {
         "type": bool,
@@ -17,6 +47,26 @@ VARIABLES_TEST = {
     }
 }
 
+# ===========================================================
+# Dictionary: VARIABLES
+#
+# Purpose:
+#   Master list of control and sensor parameters for the
+#   tractor system. Each parameter includes its type,
+#   default value, and a description (and optionally a unit).
+#
+# Typical usage:
+#   - Validation for API input
+#   - Default value population
+#   - Metadata for UI/UX or documentation
+#
+# Example Entry:
+#   "SEAT_PRESENCE": {
+#       "type": bool,
+#       "default": False,
+#       "description": "The value of the seat sensor"
+#   }
+# ===========================================================
 VARIABLES = {
     "SEAT_PRESENCE": {
         "type": bool,
