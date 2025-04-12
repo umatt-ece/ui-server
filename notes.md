@@ -8,7 +8,7 @@
 ```bash
 git https://github.com/umatt-ece/ui-server
 cd ui-server
-git pull origin bus_spi
+git pull origin feature/can_spi
 ```
 
 ### ✅ Step 2: Build the FastAPI Docker Image
